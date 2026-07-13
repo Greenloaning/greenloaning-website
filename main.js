@@ -24,6 +24,16 @@ if (hamburger && navLinks) {
   document.addEventListener('click', e => {
     if (!e.target.closest('.site-nav')) navLinks.classList.remove('open');
   });
+  // Tap-to-expand submenus on mobile
+  navLinks.querySelectorAll('.drop-toggle').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const li = btn.closest('.has-drop');
+      const expanded = li.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', expanded);
+    });
+  });
 }
 
 // Hero background parallax + loaded class

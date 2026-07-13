@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us — Greenloaning Biostudies</title>
+  <meta name="description" content="Contact Greenloaning Biostudies for a quote or to discuss ecological assessment and survey services across NSW and Queensland. We guarantee a prompt response.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <nav class="site-nav">
@@ -21,6 +25,7 @@
       <li><a href="index.html">Home</a></li>
       <li class="has-drop">
         <a href="services.html">Services</a>
+          <button class="drop-toggle" aria-label="Toggle Services submenu" aria-expanded="false">&#9662;</button>
         <div class="dropdown">
           <a href="bdar.html">Biodiversity Development Assessment Report (BDAR)</a>
           <a href="biodiversity-stewardship.html">Biodiversity Stewardship Site Assessment Reports</a>
@@ -35,6 +40,7 @@
       </li>
       <li class="has-drop">
         <a href="projects.html">Projects</a>
+          <button class="drop-toggle" aria-label="Toggle Projects submenu" aria-expanded="false">&#9662;</button>
         <div class="dropdown">
           <a href="cooma-monaro.html">Cooma-Monaro Comprehensive Koala Plan of Management</a>
           <a href="glebe-bridge.html">Glebe Bridge</a>
@@ -46,6 +52,7 @@
       </li>
       <li class="has-drop">
         <a href="about.html">About</a>
+          <button class="drop-toggle" aria-label="Toggle About submenu" aria-expanded="false">&#9662;</button>
         <div class="dropdown">
           <a href="company-director.html">Company Director</a>
           <a href="our-team.html">Our Team</a>
@@ -95,6 +102,7 @@
   <div class="contact-form-card">
     <h3>Send an Enquiry</h3>
     <p>Fill in the form below and we&#8217;ll get back to you promptly.</p>
+    <div class="form-notice">This form isn&#8217;t connected yet &#8212; please <a href="mailto:adminteam@greenloaning.com.au">email us directly</a> in the meantime.</div>
     <form class="contact-form" novalidate>
       <div class="form-row">
         <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required></div>
@@ -111,7 +119,7 @@
         </select>
       </div>
       <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project or enquiry..."></textarea></div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
+      <button type="submit" class="btn btn-primary" disabled title="This form isn't connected yet — please email us directly">Send Message</button>
     </form>
   </div>
 </div></main>
