@@ -102,24 +102,26 @@
   <div class="contact-form-card">
     <h3>Send an Enquiry</h3>
     <p>Fill in the form below and we&#8217;ll get back to you promptly.</p>
-    <div class="form-notice">This form isn&#8217;t connected yet &#8212; please <a href="mailto:adminteam@greenloaning.com.au">email us directly</a> in the meantime.</div>
     <form class="contact-form" novalidate>
+      <input type="hidden" name="access_key" value="86f6e2c0-e066-4b0a-bc45-897602636ddd">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
-        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required></div>
-        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+        <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
       </div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com" required></div>
-      <div class="form-group"><label>Phone (optional)</label><input type="tel" placeholder="(02) 0000 0000"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="jane@example.com" required></div>
+      <div class="form-group"><label>Phone (optional)</label><input type="tel" name="phone" placeholder="(02) 0000 0000"></div>
       <div class="form-group"><label>Subject</label>
-        <select>
+        <select name="subject">
           <option>Request a Quote</option>
           <option>General Enquiry</option>
           <option>Employment / Work Seeking</option>
           <option>Other</option>
         </select>
       </div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project or enquiry..."></textarea></div>
-      <button type="submit" class="btn btn-primary" disabled title="This form isn't connected yet — please email us directly">Send Message</button>
+      <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project or enquiry..." required></textarea></div>
+      <p class="form-message" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
   </div>
 </div></main>

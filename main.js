@@ -77,14 +77,35 @@ const statObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
 
-// Contact form submit (demo)
+// Contact form submit (Web3Forms)
 const form = document.querySelector('.contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  const btn = form.querySelector('button[type=submit]');
+  const msg = form.querySelector('.form-message');
+  const btnText = btn.textContent;
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#3a9a3a';
     btn.disabled = true;
+    btn.textContent = 'Sending…';
+    msg.className = 'form-message';
+    msg.textContent = '';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      const result = await res.json();
+      if (!res.ok || !result.success) throw new Error(result.message || 'Submission failed');
+      form.reset();
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#3a9a3a';
+      msg.textContent = "Thanks — your message has been sent. We'll be in touch soon.";
+      msg.className = 'form-message success';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = btnText;
+      msg.textContent = 'Something went wrong sending your message — please email us directly instead.';
+      msg.className = 'form-message error';
+    }
   });
 }
