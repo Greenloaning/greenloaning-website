@@ -32,10 +32,8 @@ Then visit `http://localhost:8934`. To check it on a phone on the same Wi-Fi, vi
 
 ## To-do
 
-- [x] **Set up GitHub account/org and push this repo.** Done — free `Greenloaning` GitHub Organization created, repo pushed as `Greenloaning/greenloaning-website`.
-- [x] **Enable GitHub Pages.** Live at https://greenloaning.github.io/greenloaning-website/ (deploy from `main`, root).
 - [ ] **Point greenloaning.com.au at GitHub Pages.** Blocked on registrar access — nobody on this project has login to wherever the domain is currently managed yet. Once available: add the domain under Pages settings (creates a `CNAME` file), then at the registrar add 4 `A` records (apex) to GitHub's Pages IPs (185.199.108/109/110/111.153) plus a `CNAME` for `www` → `greenloaning.github.io`, then enable "Enforce HTTPS" once DNS resolves.
-- [x] **Contact form backend.** Connected to Web3Forms (client-side API via `fetch`, no server needed — fits GitHub Pages). Required-field validation (First Name, Last Name, Email, Message) is enforced via the browser's native HTML5 validation — the form previously had `novalidate` set, which silently ignored the `required` attributes. Submissions currently go to `greenloaning@proton.me` (a testing address) — before real launch, generate a fresh access key at web3forms.com against the real business inbox (e.g. `adminteam@greenloaning.com.au`) and swap the `access_key` value in `contact.html`.
+- [ ] **Swap contact form to the real business inbox.** Submissions currently go to `greenloaning@proton.me` (a testing address) — before real launch, generate a fresh access key at web3forms.com against the real business inbox (e.g. `adminteam@greenloaning.com.au`) and swap the `access_key` value in `contact.html`.
 - [ ] **Deeper SEO.** Basic on-page SEO (meta descriptions, robots.txt, sitemap.xml, favicon) is done. Still open: structured data (schema.org), analytics, keyword research, submitting the sitemap to Google Search Console / Bing Webmaster Tools once the domain is live.
 - [ ] **Full accessibility pass.** Only spot-checked so far (alt text, basic contrast). A proper WCAG audit hasn't been done.
 - [ ] **Broader cross-browser/device testing.** Verified in headless Chrome (desktop + mobile emulation) and briefly on a real phone. Not tested in Safari/Firefox or on a range of real devices.
@@ -43,5 +41,4 @@ Then visit `http://localhost:8934`. To check it on a phone on the same Wi-Fi, vi
 
 ## Notes for whoever picks this up next
 
-- All fixes/decisions from the July 2026 site audit (broken links/images, a corrupted photo recovered via the Wayback Machine, image distortion bugs, mobile nav bugs) are in the git log — commit messages explain the *why*, not just the *what*.
 - No `package.json`, no dependencies to install, nothing to compile. Edit HTML/CSS/JS directly and refresh the browser.
